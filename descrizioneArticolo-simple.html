@@ -21,6 +21,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/vendor.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="css/responsive.css" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,69 +34,92 @@
 <body>
 
 	<header>
-		<div class="container py-2">
-			<div class="row py-4 pb-0 pb-sm-4 align-items-center">
-				<div
-					class="col-12 col-md-4 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-					<div class="site-name text-center text-md-start">
-						<h1 class="display-6 display-md-4 fw-bold text-primary mb-0"
+		<div class="container">
+			<!-- Header Desktop -->
+			<div class="row align-items-center d-none d-lg-flex">
+				<div class="col-lg-3 d-flex justify-content-start align-items-center">
+					<div class="site-name text-start">
+						<h1 class="display-6 fw-bold text-primary mb-0"
 							style="font-family: 'Playfair Display', serif;">Digital
 							Postcard Dreams</h1>
-						<p class="text-muted mb-0 fs-6 d-none d-md-block">Crea,
-							Personalizza, Condividi</p>
+						<p class="text-muted mb-0 fs-6"
+							style="font-family: 'avenir_next_condensedregular', sans-serif;">
+							Crea, Personalizza, Sorprendi</p>
 					</div>
 				</div>
-
-				<div
-					class="col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
+				<div class="col-lg-6 d-flex justify-content-center align-items-center">
 					<nav class="main-menu d-flex navbar navbar-expand-lg">
-						<button class="navbar-toggler" type="button"
-							data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-							aria-controls="offcanvasNavbar">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-
-						<div class="offcanvas offcanvas-end" tabindex="-1"
-							id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-							<div class="offcanvas-header justify-content-center">
-								<button type="button" class="btn-close"
-									data-bs-dismiss="offcanvas" aria-label="Close"></button>
-							</div>
-
-							<div class="offcanvas-body justify-content-between">
-								<ul
-									class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
-									<li class="nav-item"><a href="index.html"
-										class="nav-link">Home</a></li>
-									<li class="nav-item"><a href="party.html"
-										class="nav-link" id="partyLink">Party Kit</a></li>
-									<li class="nav-item"><a href="matrimonio.html"
-										class="nav-link" id="matrimonioLink">Matrimonio</a></li>
-									<li class="nav-item"><a href="bomboniere.html"
-										class="nav-link" id="bomboniereLink">Bomboniere</a></li>
-									<li class="nav-item"><a href="index.html#footer"
-										class="nav-link">Contatti</a></li>
-								</ul>
-							</div>
-						</div>
+						<ul class="navbar-nav menu-list list-unstyled d-flex gap-4 mb-0">
+							<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
+							<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+							<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+							<li class="nav-item"><a href="#footer" class="nav-link">Contatti</a></li>
+						</ul>
 					</nav>
 				</div>
-
-				<div
-					class="col-12 col-md-4 col-lg-3 d-flex justify-content-center justify-content-md-end align-items-center mt-3 mt-md-0">
-					<div class="social-icons d-flex gap-4">
+				<div class="col-lg-3 d-flex justify-content-end align-items-center">
+					<div class="social-icons-desktop d-flex gap-4">
 						<a href="https://www.instagram.com/digitalpostcarddreams"
-							target="_blank" class="social-link" title="Seguici su Instagram">
-							<iconify-icon icon="ri:instagram-fill" class="social-icon"></iconify-icon>
-						</a> <a href="https://wa.me/393497195877" target="_blank"
-							class="social-link" title="Contattaci su WhatsApp"> <iconify-icon
-								icon="logos:whatsapp-icon" class="social-icon"></iconify-icon>
+							target="_blank" class="social-link" title="Seguimi su Instagram">
+							<iconify-icon icon="mingcute:instagram-line" class="social-icon"></iconify-icon>
+						</a>
+						<a href="https://wa.me/393497195877" target="_blank"
+							class="social-link" title="Contattami su WhatsApp">
+							<iconify-icon icon="logos:whatsapp-icon" class="social-icon"></iconify-icon>
 						</a>
 					</div>
 				</div>
 			</div>
+			
+			<!-- Header Mobile/Tablet -->
+			<div class="header-mobile d-lg-none">
+				<div class="site-name-mobile">
+					<h1 class="fw-bold text-primary mb-1"
+						style="font-family: 'Playfair Display', serif;">Digital
+						Postcard Dreams</h1>
+					<p class="text-muted mb-0"
+						style="font-family: 'avenir_next_condensedregular', sans-serif;">
+						Crea, Personalizza, Sorprendi</p>
+				</div>
+				
+				<div class="social-icons-mobile">
+					<a href="https://www.instagram.com/digitalpostcarddreams"
+						target="_blank" title="Seguimi su Instagram">
+						<iconify-icon icon="mingcute:instagram-line" class="social-icon-mobile"></iconify-icon>
+					</a>
+					<a href="https://wa.me/393497195877" target="_blank"
+						class="social-link" title="Contattami su WhatsApp">
+						<iconify-icon icon="logos:whatsapp-icon" class="social-icon-mobile"></iconify-icon>
+					</a>
+				</div>
+				
+				<nav class="navbar">
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+						aria-controls="offcanvasNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="offcanvas offcanvas-end" tabindex="-1"
+						id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+							<button type="button" class="btn-close"
+								data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav menu-list list-unstyled">
+								<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+								<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
+								<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+								<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+								<li class="nav-item"><a href="#" class="nav-link" onclick="closeOffcanvas(event)">Contatti</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
 		</div>
-
 	</header>
 
 	<div style="position: relative; width: 100%; background: #fff;">
@@ -138,7 +162,7 @@
 						<img id="mainImage" src=""
 							class="img-fluid rounded-3 shadow-sm img-hover"
 							alt=""
-							style="width: 100%; height: 400px; object-fit: contain;">
+							style="width: 100%; height: 400px; object-fit: contain; background: linear-gradient(135deg, #f8f9fa, #ffffff);">
 					</div>
 
 					<!-- Thumbnail Gallery -->
@@ -401,7 +425,7 @@
 						<div class="col-3">
 							<img src="${imagePath}" class="img-fluid rounded thumbnail"
 								alt="${productId} - Vista ${index + 1}"
-								style="width: 100%; height: 80px; object-fit: contain; background: #f8f9fa; cursor: pointer; opacity: 0.7;"
+								style="width: 100%; height: 80px; object-fit: contain; background: linear-gradient(135deg, #f8f9fa, #ffffff); cursor: pointer; opacity: 0.7;"
 								onclick="changeMainImage(this.src)"
 								onmouseover="this.style.opacity='1'"
 								onmouseout="if(this !== document.querySelector('.thumbnail.active')) this.style.opacity='0.7'">
@@ -416,7 +440,7 @@
 				const firstThumbnail = thumbnailGallery.querySelector('.thumbnail');
 				if (firstThumbnail) {
 					firstThumbnail.style.opacity = '1';
-					firstThumbnail.style.border = '2px solid #007bff';
+					firstThumbnail.style.border = '2px solid #bf9e75';
 					firstThumbnail.classList.add('active');
 				}
 			}
@@ -460,7 +484,7 @@
 			const clickedThumbnail = document.querySelector(`img[src="${src}"]`);
 			if (clickedThumbnail) {
 				clickedThumbnail.style.opacity = '1';
-				clickedThumbnail.style.border = '2px solid #007bff';
+				clickedThumbnail.style.border = '2px solid #bf9e75';
 				clickedThumbnail.classList.add('active');
 			}
 		}
@@ -481,20 +505,12 @@
 
 .img-hover:hover {
 	transform: scale(1.05);
-	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 8px 25px rgba(139, 115, 85, 0.25);
 	z-index: 10;
 	position: relative;
 }
 
-.card {
-	overflow: hidden;
-	transition: transform 0.3s ease;
-}
-
-.card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+/* Card styles ora centralizzati in css/responsive.css */
 
 .thumbnail {
 	transition: opacity 0.3s ease;
@@ -511,7 +527,223 @@
 .zoom-icon {
 	opacity: 0.8;
 }
+
+/* Pulsante WhatsApp Fisso */
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.whatsapp-text {
+	background: rgba(191, 158, 117, 0.3); /* Background quasi trasparente su mobile */
+	font-family: 'avenir_next_condensedregular', sans-serif;
+	color: white;
+	padding: 6px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	white-space: nowrap;
+	box-shadow: 0 2px 8px #3b3b3c;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	margin-bottom: 8px;
+}
+
+.whatsapp-button {
+	width: 60px;
+	height: 60px;
+	background: transparent;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: none;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.whatsapp-button:hover {
+	transform: scale(1.1);
+	box-shadow: none;
+}
+
+.whatsapp-icon {
+	font-size: 32px;
+	color: #25D366;
+}
+
+.whatsapp-text:hover {
+	background: white;
+	color: #bf9e75;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+	.whatsapp-text {
+		background: rgba(191, 158, 117, 0.3); /* Background quasi trasparente */
+		backdrop-filter: blur(5px); /* Effetto blur leggero */
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		font-size: 12px;
+		padding: 0.4rem 0.8rem;
+		color: rgba(255, 255, 255, 0.9); /* Testo leggermente trasparente */
+	}
+	
+	.whatsapp-button {
+		width: 50px;
+		height: 50px;
+	}
+	
+	.whatsapp-icon {
+		font-size: 28px;
+	}
+}
 </style>
+
+	<!-- Sezione Instagram -->
+	<section class="py-5"
+		style="position: relative; overflow: hidden; padding-top: 4rem;">
+
+		<div class="container text-center">
+			<a href="https://www.instagram.com/digitalpostcarddreams"
+				target="_blank" class="text-decoration-none">
+				<h3 class="mb-2"
+					style="color: #bf9e75; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 1px;">
+					Seguimi su Instagram</h3>
+				<h4 class="mb-4"
+					style="color: #695841; font-weight: 500; font-family: 'avenir_next_condensedregular', sans-serif; font-size: 1.15rem;">
+					@digitalpostcarddreams</h4>
+			</a>
+
+			<!-- Instagram Gallery -->
+			<div class="row justify-content-center">
+				<div class="d-flex justify-content-center gap-3 flex-wrap">
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DPEhKRqiJZu/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/partykit/invitoSitch.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 1">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/partykit/bannerCR.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 4">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/bomboniere/bombonieraE.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 5">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer"
+		style="background: #fbf3f0; color: #695841; font-family: 'avenir_next_condensedregular', sans-serif; letter-spacing: 0.2px;">
+		<div class="container py-4">
+			<div class="row align-items-center">
+				<div class="col-md-12 text-center">
+					<p class="mb-0 small"
+						style="font-size: 0.95rem; padding: 10px 15px; border-radius: 8px; display: inline-block;">
+						©2025 <span
+							style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Digital
+							Postcard Dreams</span>. Tutti i diritti resi. / <a
+							href="#terms-conditions" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#termsModal">Termini e condizioni</a> / <a
+							href="#shipping-returns" class="text-decoration-underline"
+							style="color: #bf9e75;">Spedizione e resi</a> / <a
+							href="#privacy-policy" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#privacyModal">Privacy Policy</a> / <a
+							href="#cookie-policy" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#cookieModal">Cookie Policy</a> / Template
+						gratuito da <a href="https://templatesjungle.com/"
+							target="_blank" class="text-decoration-underline"
+							style="color: #bf9e75;">TemplatesJungle</a> / Distribuito da <a
+							href="https://themewagon.com/" target="_blank"
+							class="text-decoration-underline" style="color: #bf9e75;">ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Pulsante WhatsApp Fisso -->
+	<div class="whatsapp-float">
+		<div class="whatsapp-text">Contattami qui</div>
+		<a href="https://wa.me/393497195877?text=Ciao! Vorrei informazioni su questo prodotto"
+			target="_blank" class="whatsapp-button"
+			title="Contattami su WhatsApp"> 
+			<iconify-icon icon="logos:whatsapp-icon" class="whatsapp-icon"></iconify-icon>
+		</a>
+	</div>
+
+	<!-- Script per chiusura automatica burger menu -->
+	<script>
+		function closeOffcanvas(event) {
+			// Previeni il comportamento predefinito del link
+			if (event) {
+				event.preventDefault();
+			}
+			
+			const offcanvasElement = document.getElementById('offcanvasNavbar');
+			if (offcanvasElement) {
+				const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+				if (offcanvas) {
+					offcanvas.hide();
+				}
+			}
+			
+			// Scroll automatico alla sezione footer dopo un breve delay
+			setTimeout(() => {
+				const footerElement = document.getElementById('footer');
+				if (footerElement) {
+					footerElement.scrollIntoView({ 
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			}, 300);
+		}
+	</script>
 
 </body>
 

@@ -1,0 +1,369 @@
+/* ========================================
+   PRODUCT CARDS ENHANCED STYLES
+   ======================================== */
+
+/* Stile migliorato per le card dei prodotti */
+.card {
+	overflow: hidden !important;
+	transition: all 0.3s ease !important;
+	border-radius: 1.5rem !important;
+	border: 2px solid transparent !important;
+	background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%) !important;
+	box-shadow: 0 8px 25px rgba(139, 115, 85, 0.15) !important;
+	position: relative !important;
+}
+
+.card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 1.5rem;
+	padding: 2px;
+	background: linear-gradient(135deg, #bf9e75, #8B7355, #bf9e75);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: exclude;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	z-index: -1;
+}
+
+.card:hover {
+	transform: translateY(-8px) scale(1.02) !important;
+	box-shadow: 0 15px 40px rgba(139, 115, 85, 0.25) !important;
+}
+
+.card-img-top {
+	border-radius: 1.25rem 1.25rem 0 0 !important;
+	transition: all 0.3s ease !important;
+	background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+}
+
+.card:hover .card-img-top {
+	transform: scale(1.05) !important;
+}
+
+.card-body {
+	background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+	border-radius: 0 0 1.25rem 1.25rem !important;
+	padding: 1.5rem !important;
+}
+
+/* ========================================
+   SINGLE PRODUCT PAGE IMAGE STYLES
+   ======================================== */
+
+/* Stile per le immagini del singolo prodotto */
+#mainImage {
+	background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+	border-radius: 1rem !important;
+	box-shadow: 0 8px 25px rgba(139, 115, 85, 0.15) !important;
+}
+
+.thumbnail {
+	background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+	border-radius: 0.5rem !important;
+	transition: all 0.3s ease !important;
+}
+
+.thumbnail:hover {
+	opacity: 1 !important;
+	transform: scale(1.05) !important;
+}
+
+.thumbnail.active {
+	border: 2px solid #bf9e75 !important;
+	opacity: 1 !important;
+}
+
+/* ========================================
+   PRODUCT CARDS MOBILE STYLES
+   ======================================== */
+
+/* Aumenta il contrasto tra le card dei prodotti su mobile */
+@media (max-width: 768px) {
+	.card {
+		margin-bottom: 1.5rem; /* Maggiore spazio tra le card */
+		border-radius: 1.25rem; /* Bordi leggermente più piccoli su mobile */
+		box-shadow: 0 6px 20px rgba(139, 115, 85, 0.2); /* Ombra più pronunciata */
+	}
+	
+	.card:hover {
+		border-color: transparent; /* Mantieni il bordo gradiente */
+		box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+		transform: translateY(-5px) scale(1.01); /* Animazione più delicata su mobile */
+	}
+	
+	.card-img-top {
+		border-radius: 1rem 1rem 0 0; /* Bordi più piccoli su mobile */
+	}
+	
+	.card-body {
+		border-radius: 0 0 1rem 1rem; /* Bordi più piccoli su mobile */
+		padding: 1.25rem; /* Padding leggermente ridotto */
+	}
+	
+	/* Spazio extra tra le colonne */
+	.col-md-4 {
+		margin-bottom: 2rem;
+	}
+	
+	/* Background della sezione prodotti per maggiore contrasto */
+	#productsContainer {
+		background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+		padding: 2rem 1rem;
+		border-radius: 1rem;
+		margin: 1rem 0;
+	}
+}
+
+/* ========================================
+   RESPONSIVE HEADER STYLES
+   ======================================== */
+
+/* Prevenire scroll orizzontale */
+body {
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* Stili responsive per mobile e tablet */
+@media (max-width: 991.98px) {
+	/* WhatsApp text su mobile con background quasi trasparente */
+	.whatsapp-text {
+		background: rgba(139, 115, 85, 0.3); /* Background quasi trasparente */
+		backdrop-filter: blur(5px); /* Effetto blur leggero */
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		font-size: 11px;
+		padding: 6px 10px;
+		color: rgba(255, 255, 255, 0.9); /* Testo leggermente trasparente */
+	}
+	/* Header mobile */
+	.header-mobile {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem 0;
+		gap: 0.5rem;
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+	
+	.site-name-mobile {
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+	}
+	
+	.site-name-mobile h1 {
+		font-size: 1.25rem;
+		margin-bottom: 0.25rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.site-name-mobile p {
+		font-size: 0.875rem;
+		margin: 0;
+		display: block !important;
+	}
+	
+	/* Burger menu a destra */
+	.navbar-toggler {
+		order: 2;
+		border: none;
+		padding: 0.25rem 0.5rem;
+		flex-shrink: 0;
+		margin-left: 0.5rem;
+	}
+	
+	.navbar-toggler:focus {
+		box-shadow: none;
+	}
+	
+	/* Social icons più grandi per mobile */
+	.social-icons-mobile {
+		display: flex;
+		align-items: center; /* Allineamento verticale */
+		gap: 0.75rem;
+		order: 1;
+		margin-right: 0.5rem;
+		flex-shrink: 0;
+	}
+	
+	.social-icon-mobile {
+		font-size: 1.5rem;
+		color: #8B7355;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center; /* Allineamento verticale per l'icona */
+		justify-content: center; /* Allineamento orizzontale per l'icona */
+	}
+	
+	.social-icon-mobile:hover {
+		color: #bf9e75;
+		transform: scale(1.1);
+	}
+	
+	/* Nascondi social icons desktop */
+	.social-icons-desktop {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	/* Nascondi social icons mobile su desktop */
+	.social-icons-mobile {
+		display: none;
+	}
+	
+	.social-icons-desktop {
+		display: flex;
+	}
+	
+	/* Riduci dimensioni icone social su desktop */
+	.social-icons-desktop .social-icon {
+		font-size: 1.2rem; /* Ridotto da 1.5rem */
+	}
+}
+
+@media (min-width: 1200px) {
+	/* Icone social ancora più piccole su schermi grandi */
+	.social-icons-desktop .social-icon {
+		font-size: 1.1rem; /* Ancora più piccolo su schermi grandi */
+	}
+}
+
+/* Schermi molto piccoli */
+@media (max-width: 576px) {
+	.header-mobile {
+		padding: 0.25rem 0;
+		gap: 0.25rem;
+	}
+	
+	.site-name-mobile h1 {
+		font-size: 1rem;
+	}
+	
+	.site-name-mobile p {
+		font-size: 0.75rem;
+	}
+	
+	.social-icons-mobile {
+		gap: 0.5rem;
+		margin-right: 0.25rem;
+		align-items: center; /* Mantieni allineamento verticale */
+	}
+	
+	.social-icon-mobile {
+		font-size: 1.25rem;
+		display: flex;
+		align-items: center; /* Allineamento verticale per l'icona */
+		justify-content: center; /* Allineamento orizzontale per l'icona */
+	}
+	
+	.navbar-toggler {
+		padding: 0.125rem 0.25rem;
+		margin-left: 0.25rem;
+	}
+	
+	/* Contrasto ancora maggiore per smartphone */
+	.card {
+		margin-bottom: 2rem; /* Spazio ancora maggiore */
+		border-radius: 1rem; /* Bordi ancora più piccoli */
+		box-shadow: 0 8px 25px rgba(139, 115, 85, 0.25); /* Ombra più pronunciata */
+	}
+	
+	.card-img-top {
+		border-radius: 0.75rem 0.75rem 0 0; /* Bordi molto piccoli */
+	}
+	
+	.card-body {
+		border-radius: 0 0 0.75rem 0.75rem; /* Bordi molto piccoli */
+		padding: 1rem; /* Padding ridotto */
+	}
+	
+	.col-md-4 {
+		margin-bottom: 2.5rem; /* Spazio extra tra le colonne */
+	}
+	
+	#productsContainer {
+		background: linear-gradient(135deg, #f1f3f4 0%, #ffffff 50%, #f8f9fa 100%); /* Background più contrastato */
+		padding: 2.5rem 1rem;
+		margin: 1.5rem 0;
+	}
+}
+
+/* ========================================
+   WHATSAPP FLOAT BUTTON STYLES
+   ======================================== */
+
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.whatsapp-text {
+    background: rgba(191, 158, 117, 0.3); /* Background quasi trasparente su mobile */
+	color: white;
+	padding: 8px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	margin-bottom: 8px;
+	white-space: nowrap;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	font-family: 'avenir_next_condensedregular', sans-serif;
+	font-weight: 600;
+}
+
+.whatsapp-button {
+	width: 60px;
+	height: 60px;
+	background: transparent; /* Rimuovi background verde */
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: none; /* Rimuovi ombra */
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.whatsapp-button:hover {
+	transform: scale(1.1);
+	box-shadow: none; /* Rimuovi ombra al hover */
+}
+
+.whatsapp-icon {
+	font-size: 30px;
+	color: #25D366; /* Colore verde WhatsApp per l'icona */
+}
+
+/* ========================================
+   COMMON BUTTON STYLES
+   ======================================== */
+
+.btn-outline-primary {
+	border-color: #8B7355;
+	color: #8B7355;
+	transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+	background-color: #bf9e75;
+	color: white;
+	border-color: #bf9e75;
+}

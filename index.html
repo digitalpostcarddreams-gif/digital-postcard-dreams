@@ -19,6 +19,7 @@
 	rel="stylesheet" />
 <link rel="stylesheet" href="css/vendor.css" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
 <script
 	src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
@@ -28,61 +29,89 @@
 	<!-- Header -->
 	<header>
 		<div class="container">
-			<div class="row align-items-center">
-				<div
-					class="col-12 col-md-4 col-lg-3 d-flex justify-content-md-start align-items-center">
-					<div class="site-name text-md-start">
-						<h1 class="display-6 fw-bold display-md-4 text-primary mb-0"
+			<!-- Header Desktop -->
+			<div class="row align-items-center d-none d-lg-flex">
+				<div class="col-lg-3 d-flex justify-content-start align-items-center">
+					<div class="site-name text-start">
+						<h1 class="display-6 fw-bold text-primary mb-0"
 							style="font-family: 'Playfair Display', serif;">Digital
 							Postcard Dreams</h1>
-						<p class="text-muted mb-0 fs-6 d-none d-md-block"
+						<p class="text-muted mb-0 fs-6"
 							style="font-family: 'avenir_next_condensedregular', sans-serif;">
 							Crea, Personalizza, Sorprendi</p>
 					</div>
 				</div>
-				<div
-					class="col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
+				<div class="col-lg-6 d-flex justify-content-center align-items-center">
 					<nav class="main-menu d-flex navbar navbar-expand-lg">
-						<button class="navbar-toggler" type="button"
-							data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-							aria-controls="offcanvasNavbar">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="offcanvas offcanvas-end" tabindex="-1"
-							id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-							<div class="offcanvas-header justify-content-center">
-								<button type="button" class="btn-close"
-									data-bs-dismiss="offcanvas" aria-label="Close"></button>
-							</div>
-							<div class="offcanvas-body d-flex justify-content-center">
-								<ul
-									class="navbar-nav menu-list list-unstyled d-flex gap-md-4 mb-0">
-									<li class="nav-item"><a href="index.html"
-										class="nav-link active">Home</a></li>
-									<li class="nav-item"><a href="party.html" class="nav-link">Party
-											Kit</a></li>
-									<li class="nav-item"><a href="matrimonio.html"
-										class="nav-link">Matrimonio</a></li>
-									<li class="nav-item"><a href="bomboniere.html"
-										class="nav-link">Bomboniere</a></li>
-									<li class="nav-item"><a href="#footer" class="nav-link">Contatti</a></li>
-								</ul>
-							</div>
-						</div>
+						<ul class="navbar-nav menu-list list-unstyled d-flex gap-4 mb-0">
+							<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+							<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
+							<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+							<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+							<li class="nav-item"><a href="#footer" class="nav-link">Contatti</a></li>
+						</ul>
 					</nav>
 				</div>
-				<div
-					class="col-12 col-md-4 col-lg-3 d-flex justify-content-md-end align-items-center mt-3 mt-md-0">
-					<div class="social-icons d-flex gap-4">
+				<div class="col-lg-3 d-flex justify-content-end align-items-center">
+					<div class="social-icons-desktop d-flex gap-4">
 						<a href="https://www.instagram.com/digitalpostcarddreams"
 							target="_blank" class="social-link" title="Seguimi su Instagram">
 							<iconify-icon icon="mingcute:instagram-line" class="social-icon"></iconify-icon>
-						</a> <a href="https://wa.me/393497195877" target="_blank"
-							class="social-link" title="Contattami su WhatsApp"> <iconify-icon
-								icon="logos:whatsapp-icon" class="social-icon"></iconify-icon>
+						</a>
+						<a href="https://wa.me/393497195877" target="_blank"
+							class="social-link" title="Contattami su WhatsApp">
+							<iconify-icon icon="logos:whatsapp-icon" class="social-icon"></iconify-icon>
 						</a>
 					</div>
 				</div>
+			</div>
+			
+			<!-- Header Mobile/Tablet -->
+			<div class="header-mobile d-lg-none">
+				<div class="site-name-mobile">
+					<h1 class="fw-bold text-primary mb-1"
+						style="font-family: 'Playfair Display', serif;">Digital
+						Postcard Dreams</h1>
+					<p class="text-muted mb-0"
+						style="font-family: 'avenir_next_condensedregular', sans-serif;">
+						Crea, Personalizza, Sorprendi</p>
+				</div>
+				
+				<div class="social-icons-mobile">
+					<a href="https://www.instagram.com/digitalpostcarddreams"
+						target="_blank" title="Seguimi su Instagram">
+						<iconify-icon icon="mingcute:instagram-line" class="social-icon-mobile"></iconify-icon>
+					</a>
+					<a href="https://wa.me/393497195877" target="_blank"
+						title="Contattami su WhatsApp">
+						<iconify-icon icon="logos:whatsapp-icon" class="social-icon-mobile"></iconify-icon>
+					</a>
+				</div>
+				
+				<nav class="navbar">
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+						aria-controls="offcanvasNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="offcanvas offcanvas-end" tabindex="-1"
+						id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+							<button type="button" class="btn-close"
+								data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav menu-list list-unstyled">
+								<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+								<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
+								<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+								<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+								<li class="nav-item"><a href="#" class="nav-link" onclick="closeOffcanvas(event)">Contatti</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
 			</div>
 		</div>
 	</header>
@@ -90,7 +119,7 @@
 	<!-- Hero Section -->
 	<section
 		class="hero-section d-flex flex-column justify-content-center align-items-center text-center"
-		style="position: relative; background: url('categorie/sfondi/sfondo1.jpg') center/cover no-repeat; min-height: 100vh; overflow: hidden;">
+		style="position: relative; background: url('categorie/sfondi/sfondo1.jpg') center/cover no-repeat; min-height: 60vh; overflow: hidden;">
 
 		<svg viewBox="0 0 1200 120" preserveAspectRatio="none"
 			style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; transform: rotate(180deg); z-index: 1;">
@@ -183,7 +212,7 @@
 					<div class="card h-100 shadow rounded-4 border-0">
 						<a href="party.html"> <img src="categorie/partykit/bottiglia1.jpg"
 							class="card-img-top rounded-top-4" alt="Party Kit"
-							style="height: 250px; object-fit: cover;">
+							style="aspect-ratio: 1/1; object-fit: cover;">
 						</a>
 						<div class="card-body text-center">
 							<iconify-icon icon="ph:gift-fill" class="fs-1"
@@ -206,7 +235,7 @@
 						<a href="matrimonio.html"> <img
 							src="categorie/matrimonio/matrimonio1.jpg"
 							class="card-img-top rounded-top-4" alt="Matrimonio"
-							style="height: 250px; object-fit: cover;">
+							style="aspect-ratio: 1/1; object-fit: cover;">
 						</a>
 						<div class="card-body text-center">
 							<iconify-icon icon="ph:heart-straight-fill" class="fs-1"
@@ -228,7 +257,7 @@
 						<a href="bomboniere.html"> <img
 							src="categorie/bomboniere/bomboniere1.jpg"
 							class="card-img-top rounded-top-4" alt="Bomboniere"
-							style="height: 250px; object-fit: cover;">
+							style="aspect-ratio: 1/1; object-fit: cover;">
 						</a>
 						<div class="card-body text-center">
 							<iconify-icon icon="ph:sparkle-fill" class="fs-1"
@@ -437,7 +466,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-12 text-center">
 						<p class="mb-0 small"
-							style="font-size: 0.95rem; background-color: rgba(255, 255, 255, 0.6); padding: 10px 15px; border-radius: 8px; display: inline-block;">
+							style="font-size: 0.95rem; padding: 10px 15px; border-radius: 8px; display: inline-block;">
 							©2025 <span
 								style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Digital
 								Postcard Dreams</span>. Tutti i diritti riservati. / <a
@@ -726,5 +755,34 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Script per chiusura automatica burger menu -->
+		<script>
+			function closeOffcanvas(event) {
+				// Previeni il comportamento predefinito del link
+				if (event) {
+					event.preventDefault();
+				}
+				
+				const offcanvasElement = document.getElementById('offcanvasNavbar');
+				if (offcanvasElement) {
+					const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+					if (offcanvas) {
+						offcanvas.hide();
+					}
+				}
+				
+				// Scroll automatico alla sezione footer dopo un breve delay
+				setTimeout(() => {
+					const footerElement = document.getElementById('footer');
+					if (footerElement) {
+						footerElement.scrollIntoView({ 
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				}, 300);
+			}
+		</script>
 </body>
 </html>

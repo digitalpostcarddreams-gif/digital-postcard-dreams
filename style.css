@@ -411,13 +411,7 @@ a.categories-item:hover iconify-icon.category-icon {
 
 
 
-/* pet clothing */
-.card {
-  --bs-card-inner-border-radius: none;
-  --bs-card-bg: transparent;
-  background-color: transparent;
-  border: none;
-}
+/* Card styles ora centralizzati in css/responsive.css */
 
 a.btn-cart {
   border-radius: 0.25rem;
@@ -628,8 +622,8 @@ header .row {
 }
 
 .hero-section {
-  min-height: calc(100vh - 56px);
-  padding-top: 4rem; /* aumenta il padding superiore per distanziare contenuto */
+  min-height: 60vh; /* Ridotto da calc(100vh - 56px) */
+  padding-top: 2rem; /* Ridotto da 4rem */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -943,7 +937,7 @@ WhatsApp button styles
 }
 
 .whatsapp-text {
-  background: #bf9e75;
+  background: rgba(191, 158, 117, 0.3); /* Background quasi trasparente su mobile */
   font-family: 'avenir_next_condensedregular', sans-serif;
   color: white;
   padding: 6px 10px;
@@ -960,32 +954,34 @@ WhatsApp button styles
 .whatsapp-button {
   width: 60px;
   height: 60px;
+  background: transparent; /* Rimuovi background verde */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pulse 2s infinite;
+  box-shadow: none; /* Rimuovi ombra */
+  transition: all 0.3s ease;
 }
 
-.whatsapp-text:hover {
-  background: white;
-  color: #bf9e75;
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: none; /* Rimuovi ombra al hover */
 }
 
 .whatsapp-icon {
   font-size: 32px;
-  color: white;
+  color: #25D366; /* Colore verde WhatsApp per l'icona */
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    box-shadow: none;
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    box-shadow: none;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    box-shadow: none;
   }
 }
 
@@ -1065,23 +1061,24 @@ Responsive styles
   }
   
   .whatsapp-text {
-    background: #bf9e75;
-    color: #fff;
-    font-family: 'avenir_next_condensedregular', sans-serif;
-    padding: 0.5rem 1rem;
-    border-radius: 20px 20px 0 20px;
-    margin-right: 0.3rem;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(191,158,117,0.12);
+    background: rgba(191, 158, 117, 0.3); /* Background quasi trasparente su mobile */
+    backdrop-filter: blur(5px); /* Effetto blur leggero */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    padding: 0.4rem 0.8rem;
+    color: rgba(255, 255, 255, 0.9); /* Testo leggermente trasparente */
   }
   
   .whatsapp-button {
     width: 50px;
     height: 50px;
+    background: transparent; /* Rimuovi background verde anche su mobile */
+    box-shadow: none; /* Rimuovi ombra anche su mobile */
   }
   
   .whatsapp-icon {
     font-size: 28px;
+    color: #25D366; /* Colore verde WhatsApp per l'icona anche su mobile */
   }
   
   .cookie-content {

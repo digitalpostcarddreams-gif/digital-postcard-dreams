@@ -1,480 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
+<meta charset="utf-8" />
   <title>Party Kit - Digital Postcard Dreams</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="author" content="Digital Postcard Dreams">
-  <meta name="keywords" content="party kit, personalizzazioni party, decorazioni festa, compleanni, eventi personalizzati">
-  <meta name="description" content="Party kit personalizzati per ogni occasione. Decorazioni, inviti e personalizzazioni creative per compleanni, feste e celebrazioni speciali.">
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Digital Postcard Dreams" />
+<meta name="description"
+	content="Scopri i nostri Party Kit personalizzati per ogni occasione. Decori, cartoline e personalizzazioni uniche per le tue feste." />
+<meta name="keywords"
+	content="party kit, feste, compleanni, personalizzazioni eventi, decori festa" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="css/vendor.css" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<script
+	src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<style>
+/* Hover effects per immagini e card replicati dalla homepage */
+.img-hover {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+}
 
-<link rel="stylesheet" type="text/css" href="css/vendor.css">
-<link rel="stylesheet" type="text/css" href="style.css">
+.img-hover:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 25px rgba(191, 158, 117, 0.15);
+	z-index: 10;
+	position: relative;
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Montserrat:wght@300;400;500&display=swap"
-  rel="stylesheet">
+/* Card styles ora centralizzati in css/responsive.css */
+/* Pulsante call to action font e bordo */
+.btn-outline-primary {
+	font-family: 'avenir_next_condensedregular', sans-serif;
+	letter-spacing: 0.02rem;
+	padding: 1rem 2.5rem;
+	border-radius: 8px;
+	border-color: #bf9e75;
+	color: #bf9e75;
+	transition: all 0.3s ease;
+}
 
+.btn-outline-primary:hover {
+	background-color: #bf9e75;
+	color: white;
+	border-color: #bf9e75;
+}
+
+/* Pulsante WhatsApp Fisso */
+
+</style>
 </head>
 
 <body>
 
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <defs>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="link" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M12 19a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0-4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm-5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm7-12h-1V2a1 1 0 0 0-2 0v1H8V2a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9h16Zm0-11H4V6a1 1 0 0 1 1-1h1v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1ZM7 15a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0 4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="category" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M19 5.5h-6.28l-.32-1a3 3 0 0 0-2.84-2H5a3 3 0 0 0-3 3v13a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-10a3 3 0 0 0-3-3Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h4.56a1 1 0 0 1 .95.68l.54 1.64a1 1 0 0 0 .95.68h7a1 1 0 0 1 1 1Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="heart" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="check" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="trash" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="star-outline" viewBox="0 0 15 15">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          d="M7.5 9.804L5.337 11l.413-2.533L4 6.674l2.418-.37L7.5 4l1.082 2.304l2.418.37l-1.75 1.793L9.663 11L7.5 9.804Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="star-solid" viewBox="0 0 15 15">
-        <path fill="currentColor"
-          d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 15 15">
-        <path fill="currentColor"
-          d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
-      </symbol>
-
-    </defs>
-  </svg>
-
-  <div class="preloader-wrapper">
-    <div class="preloader">
-    </div>
-  </div>
-
   <header>
-    <div class="container py-2">
-      <div class="row py-4 pb-0 pb-sm-4 align-items-center ">
-
-        <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-          <div class="site-name text-center text-md-start">
-            <h1 class="display-6 display-md-4 fw-bold text-primary mb-0" style="font-family: 'Playfair Display', serif;">
-              <a href="index.html" class="text-decoration-none text-primary">Digital Postcard Dreams</a>
-            </h1>
-            <p class="text-muted mb-0 fs-6 d-none d-md-block">Crea, Personalizza, Condividi</p>
+		<div class="container">
+			<!-- Header Desktop -->
+			<div class="row align-items-center d-none d-lg-flex">
+				<div class="col-lg-3 d-flex justify-content-start align-items-center">
+					<div class="site-name text-start">
+						<h1 class="display-6 fw-bold text-primary mb-0"
+							style="font-family: 'Playfair Display', serif;">Digital
+							Postcard Dreams</h1>
+						<p class="text-muted mb-0 fs-6"
+							style="font-family: 'avenir_next_condensedregular', sans-serif;">
+							Crea, Personalizza, Sorprendi</p>
           </div>
         </div>
-
-        <div class="col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
+				<div class="col-lg-6 d-flex justify-content-center align-items-center">
           <nav class="main-menu d-flex navbar navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header justify-content-center">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-
-              <div class="offcanvas-body justify-content-between">
-                <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
-                  <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="party.html" class="nav-link active">Party Kit</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="matrimonio.html" class="nav-link">Matrimonio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="bomboniere.html" class="nav-link">Bomboniere</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#footer" class="nav-link">Contatti</a>
-                  </li>
+						<ul class="navbar-nav menu-list list-unstyled d-flex gap-4 mb-0">
+							<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="party.html" class="nav-link active">Party Kit</a></li>
+							<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+							<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+							<li class="nav-item"><a href="#footer" class="nav-link">Contatti</a></li>
                 </ul>
-              </div>
-            </div>
           </nav>
         </div>
-
-        <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center justify-content-md-end align-items-center mt-3 mt-md-0">
-          <div class="social-icons d-flex gap-4">
-            <a href="https://www.instagram.com/digitalpostcarddreams" target="_blank" class="social-link" title="Seguici su Instagram">
-              <iconify-icon icon="ri:instagram-fill" class="social-icon"></iconify-icon>
-            </a>
-            <a href="https://wa.me/393497195877" target="_blank" class="social-link" title="Contattaci su WhatsApp">
+				<div class="col-lg-3 d-flex justify-content-end align-items-center">
+					<div class="social-icons-desktop d-flex gap-4">
+						<a href="https://www.instagram.com/digitalpostcarddreams"
+							target="_blank" class="social-link" title="Seguimi su Instagram">
+							<iconify-icon icon="mingcute:instagram-line" class="social-icon"></iconify-icon>
+						</a>
+						<a href="https://wa.me/393497195877" target="_blank"
+							class="social-link" title="Contattami su WhatsApp">
               <iconify-icon icon="logos:whatsapp-icon" class="social-icon"></iconify-icon>
             </a>
           </div>
         </div>
       </div>
+			
+			<!-- Header Mobile/Tablet -->
+			<div class="header-mobile d-lg-none">
+				<div class="site-name-mobile">
+					<h1 class="fw-bold text-primary mb-1"
+						style="font-family: 'Playfair Display', serif;">Digital
+						Postcard Dreams</h1>
+					<p class="text-muted mb-0"
+						style="font-family: 'avenir_next_condensedregular', sans-serif;">
+						Crea, Personalizza, Sorprendi</p>
     </div>
 
-    <div class="container-fluid">
-      <hr class="m-0">
+				<div class="social-icons-mobile">
+					<a href="https://www.instagram.com/digitalpostcarddreams"
+						target="_blank" title="Seguimi su Instagram">
+						<iconify-icon icon="mingcute:instagram-line" class="social-icon-mobile"></iconify-icon>
+					</a>
+					<a href="https://wa.me/393497195877" target="_blank"
+						title="Contattami su WhatsApp">
+						<iconify-icon icon="logos:whatsapp-icon" class="social-icon-mobile"></iconify-icon>
+					</a>
     </div>
 
-  </header>
-
-  <!-- Hero Section -->
-  <section id="banner" style="background-image: url('categorie/logo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
-    <div style="position: relative; z-index: 2;">
-      <div class="container">
-        <div class="row banner-content align-items-center py-5">
-          <div class="content-wrapper col-12 p-3 p-md-5 mb-5 text-center">
-            <div class="secondary-font text-primary text-uppercase mb-4">Feste Indimenticabili</div>
-            <h2 class="banner-title display-1 fw-normal">Party Kit <span class="text-primary">personalizzati</span></h2>
-            <p class="lead mb-4">Trasforma ogni celebrazione in un evento unico con i nostri party kit personalizzati. Decorazioni, inviti e dettagli creativi per compleanni, feste e occasioni speciali.</p>
+				<nav class="navbar">
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+						aria-controls="offcanvasNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="offcanvas offcanvas-end" tabindex="-1"
+						id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+							<button type="button" class="btn-close"
+								data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav menu-list list-unstyled">
+								<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+								<li class="nav-item"><a href="party.html" class="nav-link active">Party Kit</a></li>
+								<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
+								<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
+								<li class="nav-item"><a href="#" class="nav-link" onclick="closeOffcanvas(event)">Contatti</a></li>
+							</ul>
           </div>
         </div>
+				</nav>
       </div>
     </div>
-  </section>
+	</header>
 
-  <!-- Descrizione Sezione -->
-  <section class="my-5">
-    <div class="container my-5 py-5">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="display-4 fw-bold mb-4" style="background: linear-gradient(135deg, #007bff, #6f42c1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Party Kit Creativi
-          </h2>
-          <p class="lead text-muted mb-5">
-            I nostri party kit sono progettati per rendere ogni festa un'esperienza magica e indimenticabile. 
-            Ogni elemento è creato con cura e attenzione ai dettagli, utilizzando materiali di qualità e design personalizzati 
-            che si adattano perfettamente al tema e allo stile della vostra celebrazione.
-          </p>
-          <div class="row g-4 mb-5">
+	<section
+  class="hero-section d-flex flex-column justify-content-center align-items-center text-center"
+  style="position: relative; background: url('categorie/sfondi/sfondo1.jpg') center/cover no-repeat; min-height: 60vh; overflow: hidden; padding-bottom: 80px;">
+  <!-- Onda sopra -->
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; transform: rotate(180deg); z-index: 1;">
+    <path
+      d="M0,0 C150,50 350,0 600,50 C850,100 1050,50 1200,0 L1200,120 L0,120 Z"
+      fill="#fff"></path>
+  </svg>
+
+  <div
+    style="position: relative; z-index: 2; padding: 3rem 1rem; color: #5a4a3c; font-family: 'Montserrat', sans-serif;">
+    <h1>Party Kit Completi e Personalizzati</h1>
+    <p
+      style="font-family: 'avenir_next_condensedregular', sans-serif; font-size: 1.5rem; max-width: 600px; margin: 0 auto;">
+      Kit unici con decorazioni esclusive e cartoline digitali, perfetti per rendere ogni festa speciale.</p>
+  </div>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
             <div class="col-md-4">
               <div class="text-center">
                 <iconify-icon icon="ph:gift-fill" class="fs-1 text-primary mb-3"></iconify-icon>
-                <h5>Compleanni</h5>
-                <p class="text-muted">Celebrazioni personalizzate per ogni età</p>
+          <h4 class="card-title"
+            style="font-family: 'Montserrat', sans-serif; color: #695841;">Compleanni</h4>
+          <p class="card-text"
+            style="font-family: 'avenir_next_condensedregular', sans-serif; color: #695841;">Per
+            bambini e adulti</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="text-center">
-                <iconify-icon icon="ph:sparkle-fill" class="fs-1 text-warning mb-3"></iconify-icon>
-                <h5>Feste Tematiche</h5>
-                <p class="text-muted">Decorazioni per ogni tema e occasione</p>
+          <iconify-icon icon="ph:heart-fill" class="fs-1 text-primary mb-3"></iconify-icon>
+          <h4 class="card-title"
+            style="font-family: 'Montserrat', sans-serif; color: #695841;">Anniversari</h4>
+          <p class="card-text"
+            style="font-family: 'avenir_next_condensedregular', sans-serif; color: #695841;">Celebrazioni
+            romantiche</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="text-center">
-                <iconify-icon icon="ph:heart-straight-fill" class="fs-1 text-danger mb-3"></iconify-icon>
-                <h5>Eventi Speciali</h5>
-                <p class="text-muted">Per ogni momento importante della vita</p>
-              </div>
-            </div>
-          </div>
+          <iconify-icon icon="ph:sparkle-fill"
+            class="fs-1 text-primary mb-3"></iconify-icon>
+          <h4 class="card-title"
+            style="font-family: 'Montserrat', sans-serif; color: #695841;">Feste
+            a Tema</h4>
+          <p class="card-text"
+            style="font-family: 'avenir_next_condensedregular', sans-serif; color: #695841;">Design
+            personalizzati</p>
         </div>
       </div>
     </div>
+  </div>
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+     style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; z-index: 1;">
+  <path d="M0 50 C 150 150 350 0 600 50 C 850 100 1050 0 1200 50 L1200 120 L0 120 Z" fill="#fff"></path>
+</svg>
   </section>
 
-  <!-- Galleria Foto -->
-  <section class="my-5">
-    <div class="container my-5 py-5">
-      <div class="section-header text-center mb-5">
-        <h2 class="display-3 fw-bold mb-4">Le Nostre Creazioni</h2>
-        <p class="lead text-muted mb-5">Scopri alcuni esempi dei nostri party kit personalizzati</p>
-      </div>
 
-      <div class="row g-4" id="productsContainer">
-        <!-- I prodotti verranno caricati dinamicamente qui -->
-        <div class="col-12 text-center">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Caricamento prodotti...</span>
-          </div>
-          <p class="mt-2">Caricamento prodotti...</p>
+	<section id="service"
+		style="position: relative; background: #fff; overflow: hidden;">
+		<svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+			style="position: absolute; top: 0; left: 0; width: 100%; height: 60px; transform: rotate(180deg); z-index: 1; >
+      <path
+				d="M0,0 C150,50 350,0 600,50 C850,100 1050,50 1200,0 L1200,120 L0,120 Z"
+				fill="#fff"></path>
+    </svg>
+		<div class="container" style="position: relative; z-index: 2; padding: 5rem 1rem;">
+			<div class="section-header text-center mb-5">
+				<h2 class="display-4 fw-bold mb-4"
+					style="background: linear-gradient(135deg, #bf9e75, #bfa875); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Le
+					Mie Creazioni</h2>
+				<p class="lead text-muted mb-5" style="font-family: 'avenir_next_condensedregular', sans-serif;"> Scopri alcuni esempi delle creazioni 
+				che potrai includere nel tuo Party Kit, per rendere la tua festa davvero speciale. </p>
         </div>
-      </div>
-    </div>
+        
+			<div class="row g-4" id="productsContainer">
+				<!-- I prodotti verranno caricati dinamicamente qui -->
+				<div class="col-12 text-center">
+					<div class="spinner-border text-primary" role="status">
+						<span class="visually-hidden">Caricamento prodotti...</span>
+            </div>
+					<p class="mt-2">Caricamento prodotti...</p>
+            </div>
+          </div>
+        </div>
+		<svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+			style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; z-index: 1;">
+      <path
+				d="M0,0 C150,50 350,0 600,50 C850,100 1050,50 1200,0 L1200,120 L0,120 Z"
+				fill="#fbf3f0"></path>
+    </svg>
   </section>
 
-  <!-- Servizi Party Kit -->
-  <section class="my-5">
-    <div class="container py-5 my-5">
-      <div class="row g-md-5 pt-4">
-        <div class="col-md-3 my-3">
-          <div class="card">
-            <div>
-              <iconify-icon class="service-icon text-primary" icon="ph:gift"></iconify-icon>
-            </div>
-            <h3 class="card-title py-2 m-0" style="font-family: 'Montserrat', sans-serif; color: #695841;">Kit Completi</h3>
-            <div class="card-text">
-              <p class="blog-paragraph fs-6">Party kit completi con decorazioni, inviti e accessori coordinati per ogni tema.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3">
-          <div class="card">
-            <div>
-              <iconify-icon class="service-icon text-primary" icon="ph:palette"></iconify-icon>
-            </div>
-            <h3 class="card-title py-2 m-0" style="font-family: 'Montserrat', sans-serif; color: #695841;">Design Personalizzato</h3>
-            <div class="card-text">
-              <p class="blog-paragraph fs-6">Ogni party kit è progettato su misura per riflettere il vostro stile e personalità.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3">
-          <div class="card">
-            <div>
-              <iconify-icon class="service-icon text-primary" icon="ph:clock"></iconify-icon>
-            </div>
-            <h3 class="card-title py-2 m-0" style="font-family: 'Montserrat', sans-serif; color: #695841;">Consegna Veloce</h3>
-            <div class="card-text">
-              <p class="blog-paragraph fs-6">Tempi di realizzazione rapidi per rispettare le vostre scadenze.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3">
-          <div class="card">
-            <div>
-              <iconify-icon class="service-icon text-primary" icon="ph:heart"></iconify-icon>
-            </div>
-            <h3 class="card-title py-2 m-0" style="font-family: 'Montserrat', sans-serif; color: #695841;">Fatto con Passione</h3>
-            <div class="card-text">
-              <p class="blog-paragraph fs-6">Ogni dettaglio è curato con amore per rendere speciale la vostra festa.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+		<!-- Banner WhatsApp -->
+	<section class="py-5"
+		style="position: relative; background: #fbf3f0; overflow: hidden;">
 
-  <!-- Call to Action -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-    <div class="container">
+		<div class="container" style="position: relative; z-index: 2;">
       <div class="row align-items-center">
-        <div class="col-md-8">
-          <h3 class="fw-bold text-dark mb-3">Pronto a organizzare la tua festa perfetta?</h3>
-          <p class="text-muted mb-0">Contattaci per una consulenza gratuita e scopri come rendere unico il tuo evento.</p>
+				<div class="col-md-8"
+					style="color: #695841; font-family: 'avenir_next_condensedregular', sans-serif;">
+					<h3 class="fw-bold mb-3"
+						style="font-family: 'Montserrat', sans-serif; color: #bf9e75;">
+						Sei pronto a dare un tocco speciale al tuo evento?</h3>
+					<p>
+						Unisciti a chi ha già scelto <span
+							style="color: #bf9e75; font-weight: bold;">DigitalPostcardDreams
+						</span> per un tocco personalizzato e autentico
+					</p>
         </div>
         <div class="col-md-4 text-center text-md-end">
-          <a href="#footer" class="btn btn-primary btn-lg px-4 py-3 rounded-1">
-            Richiedi Preventivo
-            <iconify-icon icon="ph:arrow-right" class="ms-2"></iconify-icon>
-          </a>
+					<a
+						href="https://wa.me/393497195877?text=Ciao! Vorrei informazioni sulle personalizzazioni per eventi"
+						target="_blank" class="btn btn-outline-primary"
+						style="font-family: 'avenir_next_condensedregular', sans-serif;">
+						<iconify-icon icon="logos:whatsapp-icon" class="me-2"></iconify-icon>
+						Contattami su WhatsApp
+					</a>
         </div>
       </div>
     </div>
-  </section>
+	</section>
 
-  <footer id="footer" class="my-5">
-    <div class="container py-5 my-5">
-      <div class="row">
+	<!-- Sezione Instagram -->
+	<section class="py-5"
+		style="position: relative; overflow: hidden; padding-top: 4rem;">
 
-        <div class="col-md-3">
-          <div class="footer-menu">
-            <h3 class="text-primary fw-bold mb-3">Digital Postcard Dreams</h3>
-            <p class="blog-paragraph fs-6 mt-3">Iscriviti alla nostra newsletter per ricevere aggiornamenti sulle nostre fantastiche offerte.</p>
-            <div class="social-links">
-              <ul class="d-flex list-unstyled gap-2">
-                <li class="social">
-                  <a href="#">
-                    <iconify-icon class="social-icon" icon="ri:facebook-fill"></iconify-icon>
-                  </a>
-                </li>
-                <li class="social">
-                  <a href="#">
-                    <iconify-icon class="social-icon" icon="ri:twitter-fill"></iconify-icon>
-                  </a>
-                </li>
-                <li class="social">
-                  <a href="#">
-                    <iconify-icon class="social-icon" icon="ri:pinterest-fill"></iconify-icon>
-                  </a>
-                </li>
-                <li class="social">
-                  <a href="#">
-                    <iconify-icon class="social-icon" icon="ri:instagram-fill"></iconify-icon>
-                  </a>
-                </li>
-                <li class="social">
-                  <a href="#">
-                    <iconify-icon class="social-icon" icon="ri:youtube-fill"></iconify-icon>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="footer-menu">
-            <h3>Informazioni Legali</h3>
-            <ul class="menu-list list-unstyled">
-              <li class="menu-item mb-2">
-                <a href="#privacy-policy" class="nav-link" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
-              </li>
-              <li class="menu-item mb-2">
-                <a href="#cookie-policy" class="nav-link" data-bs-toggle="modal" data-bs-target="#cookieModal">Cookie Policy</a>
-              </li>
-              <li class="menu-item mb-2">
-                <a href="#terms-conditions" class="nav-link" data-bs-toggle="modal" data-bs-target="#termsModal">Termini e Condizioni</a>
-              </li>
-              <li class="menu-item mb-2">
-                <a href="#gdpr" class="nav-link" data-bs-toggle="modal" data-bs-target="#gdprModal">Diritti GDPR</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="footer-menu">
-            <h3>Contattaci</h3>
-            <div class="contact-info">
-              <div class="contact-item d-flex align-items-center mb-3">
-                <iconify-icon icon="ph:phone-fill" class="text-primary me-3 fs-5"></iconify-icon>
-                <div>
-                  <div class="fw-bold">Telefono</div>
-                  <div class="text-muted">+393497195877</div>
-                </div>
-              </div>
-              <div class="contact-item d-flex align-items-center mb-3">
-                <iconify-icon icon="ph:envelope-fill" class="text-primary me-3 fs-5"></iconify-icon>
-                <div>
-                  <div class="fw-bold">Email</div>
-                  <div class="text-muted">digitalpostcards@gmail.com</div>
-                </div>
-              </div>
-              <div class="contact-item d-flex align-items-start mb-3">
-                <iconify-icon icon="ph:clock-fill" class="text-primary me-3 fs-5 mt-1"></iconify-icon>
-                <div>
-                  <div class="fw-bold">Orari</div>
-                  <div class="text-muted">Lun-Ven: 9:00-18:00<br>Sab: 9:00-13:00</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+		<div class="container text-center">
+			<a href="https://www.instagram.com/digitalpostcarddreams"
+				target="_blank" class="text-decoration-none">
+				<h3 class="mb-2"
+					style="color: #bf9e75; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 1px;">
+					Seguimi su Instagram</h3>
+				<h4 class="mb-4"
+					style="color: #695841; font-weight: 500; font-family: 'avenir_next_condensedregular', sans-serif; font-size: 1.15rem;">
+					@digitalpostcarddreams</h4>
+			</a>
 
-      </div>
-    </div>
-  </footer>
+			<!-- Instagram Gallery -->
+			<div class="row justify-content-center">
+				<div class="d-flex justify-content-center gap-3 flex-wrap">
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DPEhKRqiJZu/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/partykit/invitoSitch.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 1">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/partykit/bannerCR.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 4">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+					<a
+						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						target="_blank" class="text-decoration-none">
+						<div class="position-relative instagram-post-card"
+							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
+							<img src="categorie/bomboniere/bombonieraE.jpg"
+								class="img-fluid rounded-3"
+								style="width: 100%; height: 100%; object-fit: cover;"
+								alt="Instagram Post 5">
+							<div class="position-absolute top-0 end-0 m-2">
+								<iconify-icon icon="ri:instagram-fill"
+									style="color: #fff; font-size: 1.2rem;"></iconify-icon>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <div id="footer-bottom">
-    <div class="container">
-      <hr class="m-0">
-      <div class="row mt-3">
-        <div class="col-md-6 copyright">
-          <p class="secondary-font">© 2024 Digital Postcard Dreams. Tutti i diritti riservati.</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <p class="secondary-font">Template HTML gratuito da <a href="https://templatesjungle.com/" target="_blank"
-              class="text-decoration-underline fw-bold text-black-50"> TemplatesJungle</a> Distribuito da <a href="https://themewagon.com/" target="_blank"
-              class="text-decoration-underline fw-bold text-black-50"> ThemeWagon</a></p>
-        </div>
-      </div>
-    </div>
+	<!-- Footer -->
+	<footer id="footer"
+		style="background: #fbf3f0; color: #695841; font-family: 'avenir_next_condensedregular', sans-serif; letter-spacing: 0.2px;">
+		<div class="container py-4">
+			<div class="row align-items-center">
+				<div class="col-md-12 text-center">
+					<p class="mb-0 small"
+						style="font-size: 0.95rem; padding: 10px 15px; border-radius: 8px; display: inline-block;">
+						©2025 <span
+							style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Digital
+							Postcard Dreams</span>. Tutti i diritti resi. / <a
+							href="#terms-conditions" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#termsModal">Termini e condizioni</a> / <a
+							href="#shipping-returns" class="text-decoration-underline"
+							style="color: #bf9e75;">Spedizione e resi</a> / <a
+							href="#privacy-policy" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#privacyModal">Privacy Policy</a> / <a
+							href="#cookie-policy" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#cookieModal">Cookie Policy</a> / Template
+						gratuito da <a href="https://templatesjungle.com/"
+							target="_blank" class="text-decoration-underline"
+							style="color: #bf9e75;">TemplatesJungle</a> / Distribuito da <a
+							href="https://themewagon.com/" target="_blank"
+							class="text-decoration-underline" style="color: #bf9e75;">ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="whatsapp-float">
+		<div class="whatsapp-text">Contattami qui</div>
+		<a
+			href="https://wa.me/393497195877?text=Ciao! Vorrei informazioni sui Party Kit personalizzati"
+			target="_blank" class="whatsapp-button"
+			title="Contattami su WhatsApp"> <iconify-icon
+				icon="logos:whatsapp-icon" class="whatsapp-icon"></iconify-icon>
+		</a>
   </div>
   
   <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+	<script src="js/product-loader.js"></script>
+	<script
+		src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-  <!-- CSS per effetti hover -->
-  <style>
-    .img-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .img-hover:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      z-index: 10;
-      position: relative;
-    }
-    
-    .card {
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-  </style>
-
-  <!-- Pulsante WhatsApp Fisso -->
-  <div class="whatsapp-float">
-    <div class="whatsapp-text">Contattami qui</div>
-    <a href="https://wa.me/393497195877?text=Ciao! Vorrei informazioni sui party kit personalizzati" 
-       target="_blank" 
-       class="whatsapp-button"
-       title="Contattaci su WhatsApp">
-      <iconify-icon icon="logos:whatsapp-icon" class="whatsapp-icon"></iconify-icon>
-    </a>
-  </div>
-
-  <!-- Script per caricamento dinamico prodotti -->
-  <script src="js/product-loader.js"></script>
-  <script>
-    // Carica i prodotti quando la pagina è pronta
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM caricato, inizializzo caricamento prodotti Party Kit...');
-      initProductLoader('partykit', 'productsContainer');
-    });
-  </script>
+	<script>
+		// Carica i prodotti quando la pagina è pronta
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log('DOM caricato, inizializzo caricamento prodotti Party Kit...');
+			initProductLoader('partykit', 'productsContainer');
+		});
+		
+		// Funzione per chiudere automaticamente il burger menu
+		function closeOffcanvas(event) {
+			// Previeni il comportamento predefinito del link
+			if (event) {
+				event.preventDefault();
+			}
+			
+			const offcanvasElement = document.getElementById('offcanvasNavbar');
+			if (offcanvasElement) {
+				const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+				if (offcanvas) {
+					offcanvas.hide();
+				}
+			}
+			
+			// Scroll automatico alla sezione footer dopo un breve delay
+			setTimeout(() => {
+				const footerElement = document.getElementById('footer');
+				if (footerElement) {
+					footerElement.scrollIntoView({ 
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			}, 300);
+		}
+	</script>
 
 </body>
 
