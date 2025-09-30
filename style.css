@@ -538,7 +538,6 @@ iconify-icon.social-icon {
   font-size: 1.6rem;
   padding: 0.75rem;
   border-radius: 4.375rem;
-  border: 1px solid #D9D9D8;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.03);
   transition: all 0.5s ease;
 }

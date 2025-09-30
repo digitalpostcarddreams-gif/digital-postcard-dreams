@@ -41,7 +41,9 @@
 					<div class="site-name text-start">
 						<h1 class="display-6 fw-bold text-primary mb-0"
 							style="font-family: 'Playfair Display', serif;">Digital
-							Postcard Dreams</h1>
+							Postcard</h1>
+						<h1 class="display-6 fw-bold text-primary mb-0"
+							style="font-family: 'Playfair Display', serif;">Dreams</h1>
 						<p class="text-muted mb-0 fs-6"
 							style="font-family: 'avenir_next_condensedregular', sans-serif;">
 							Crea, Personalizza, Sorprendi</p>
@@ -77,7 +79,9 @@
 				<div class="site-name-mobile">
 					<h1 class="fw-bold text-primary mb-1"
 						style="font-family: 'Playfair Display', serif;">Digital
-						Postcard Dreams</h1>
+						Postcard</h1>
+					<h1 class="fw-bold text-primary mb-1"
+						style="font-family: 'Playfair Display', serif;">Dreams</h1>
 					<p class="text-muted mb-0"
 						style="font-family: 'avenir_next_condensedregular', sans-serif;">
 						Crea, Personalizza, Sorprendi</p>
@@ -624,7 +628,7 @@
 			<div class="row justify-content-center">
 				<div class="d-flex justify-content-center gap-3 flex-wrap">
 					<a
-						href="https://www.instagram.com/digitalpostcarddreams/p/DPEhKRqiJZu/"
+						href="https://www.instagram.com/digitalpostcarddreams/p/DKt37MStkqn/"
 						target="_blank" class="text-decoration-none">
 						<div class="position-relative instagram-post-card"
 							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
@@ -639,7 +643,7 @@
 						</div>
 					</a>
 					<a
-						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						href="https://www.instagram.com/digitalpostcarddreams/p/DJjxfe6MEXQ/"
 						target="_blank" class="text-decoration-none">
 						<div class="position-relative instagram-post-card"
 							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
@@ -654,7 +658,7 @@
 						</div>
 					</a>
 					<a
-						href="https://www.instagram.com/digitalpostcarddreams/p/DO8qst3CFDs/"
+						href="https://www.instagram.com/digitalpostcarddreams/p/DJjxfe6MEXQ/"
 						target="_blank" class="text-decoration-none">
 						<div class="position-relative instagram-post-card"
 							style="width: 120px; height: 120px; transition: box-shadow 0.3s;">
@@ -743,6 +747,23 @@
 				}
 			}, 300);
 		}
+	</script>
+
+	<!-- Script per evidenziare la pagina attiva -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Rimuovi la classe active da tutti i link
+			document.querySelectorAll('.nav-link').forEach(link => {
+				link.classList.remove('active');
+			});
+			
+			// Aggiungi la classe active al link della pagina corrente
+			const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+			const activeLink = document.querySelector(`a[href="${currentPage}"]`);
+			if (activeLink) {
+				activeLink.classList.add('active');
+			}
+		});
 	</script>
 
 </body>
