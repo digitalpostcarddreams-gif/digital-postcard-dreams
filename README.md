@@ -7,7 +7,7 @@ Il sito ora utilizza un sistema modulare dove tutti i prodotti sono gestiti da u
 ## 📁 Struttura
 
 ```
-public/immagini/
+public/categorie/
 ├── partykit/ (22 prodotti)
 │   ├── bottiglia/
 │   ├── invitoSitch/

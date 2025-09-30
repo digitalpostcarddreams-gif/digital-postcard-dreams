@@ -203,6 +203,9 @@
 		</div>
 	</section>
 
+	<!-- Script per caricamento dinamico prodotti -->
+	<script src="js/product-loader.js"></script>
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
@@ -244,7 +247,7 @@
 			
 			// Determina il nome della cartella da usare
 			const folderName = folderMapping[productId] || productId;
-			const configPath = `${basePath}immagini/${category}/${folderName}/config.json`;
+			const configPath = `${basePath}categorie/${category}/${folderName}/config.json`;
 			
 			console.log(`Tentativo di caricamento da: ${configPath}`);
 			console.log(`URL completo: ${window.location.origin}/${configPath}`);
@@ -326,8 +329,8 @@
 			if (productPrice) productPrice.textContent = productConfig.price;
 			if (productDescription) productDescription.innerHTML = productConfig.description;
 
-			// Carica le immagini
-			loadProductImages(productId, category);
+			// Carica le immagini dinamicamente
+			loadProductImagesDynamic(productId, category);
 		}
 
 		// Funzione per mostrare errori
@@ -341,8 +344,8 @@
 			if (productDescription) productDescription.innerHTML = `<p class="text-danger">${message}</p>`;
 		}
 
-		// Funzione semplificata per caricare le immagini del prodotto
-		function loadProductImages(productId, category) {
+		// Funzione dinamica per caricare tutte le immagini del prodotto
+		async function loadProductImagesDynamic(productId, category) {
 			const thumbnailGallery = document.getElementById('thumbnailGallery');
 			const mainImage = document.getElementById('mainImage');
 			
@@ -351,132 +354,87 @@
 				return;
 			}
 
-			console.log(`Caricamento immagini per prodotto: ${productId}, categoria: ${category}`);
+			console.log(`Caricamento dinamico immagini per prodotto: ${productId}, categoria: ${category}`);
 
-			// Sistema dinamico per trovare automaticamente tutte le immagini
-			const basePath = '';
-			
 			// Mapping speciale per prodotti con nomi diversi dalle cartelle
 			const folderMapping = {
 				'bottiglia1': 'bottiglia',
 				'bottiglia2': 'bottiglia'
 			};
 			
-			// Determina il nome della cartella da usare
 			const folderName = folderMapping[productId] || productId;
-			
-			// Lista delle estensioni di immagini supportate
-			const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-			
-			// Lista dei pattern di nomi comuni per le immagini
-			const commonPatterns = [
-				`${productId}1`, `${productId}2`, `${productId}3`, `${productId}4`, `${productId}5`,
-				`${productId}`, `${productId}_1`, `${productId}_2`, `${productId}_3`,
-				'image1', 'image2', 'image3', 'image4', 'image5',
-				'foto1', 'foto2', 'foto3', 'foto4', 'foto5',
-				'img1', 'img2', 'img3', 'img4', 'img5',
-				'photo1', 'photo2', 'photo3', 'photo4', 'photo5'
-			];
-
-			console.log('Pattern di ricerca:', commonPatterns);
 			console.log('Nome cartella:', folderName);
 
-			// Prova a caricare le immagini con tutti i pattern possibili
-			let foundImages = [];
-			let currentPattern = 0;
-
-			function tryLoadPattern(patternIndex) {
-				if (patternIndex >= commonPatterns.length) {
-					console.log('Immagini trovate:', foundImages);
-					if (foundImages.length > 0) {
-						createImageGallery(foundImages);
-					} else {
-						showNoImagesMessage();
-					}
-					return;
-				}
-
-				const pattern = commonPatterns[patternIndex];
-				let extensionIndex = 0;
-
-				function tryExtension(extIndex) {
-					if (extIndex >= imageExtensions.length) {
-						// Prova il prossimo pattern
-						tryLoadPattern(patternIndex + 1);
-						return;
-					}
-
-					const imagePath = `${basePath}immagini/${category}/${folderName}/immaginiProdotto/${pattern}${imageExtensions[extIndex]}`;
-					console.log(`Testando: ${imagePath}`);
-
-		// Prova a caricare l'immagine direttamente
-		const img = new Image();
-		img.onload = function() {
-			console.log(`✅ Immagine trovata: ${imagePath}`);
-			foundImages.push(imagePath);
-			tryExtension(extIndex + 1);
-		};
-		img.onerror = function() {
-			console.log(`❌ Non trovata: ${imagePath}`);
-			tryExtension(extIndex + 1);
-		};
-		img.src = imagePath;
-				}
-
-				tryExtension(0);
-			}
-
-			function createImageGallery(imagePaths) {
-				// Carica la prima immagine come principale
-				if (imagePaths.length > 0) {
-					mainImage.src = imagePaths[0];
-					mainImage.alt = `${productId} - Immagine principale`;
-					console.log(`Immagine principale caricata: ${imagePaths[0]}`);
-				}
-
-				// Crea le thumbnail
-				if (thumbnailGallery && imagePaths.length > 0) {
-					let thumbnailHTML = '<div class="row g-2">';
-					imagePaths.forEach((imagePath, index) => {
-						thumbnailHTML += `
-							<div class="col-3">
-								<img src="${imagePath}" class="img-fluid rounded thumbnail"
-									alt="${productId} - Vista ${index + 1}"
-									style="width: 100%; height: 80px; object-fit: contain; background: #f8f9fa; cursor: pointer; opacity: 0.7;"
-									onclick="changeMainImage(this.src)"
-									onmouseover="this.style.opacity='1'"
-									onmouseout="if(this !== document.querySelector('.thumbnail.active')) this.style.opacity='0.7'">
-							</div>
-						`;
-					});
-					thumbnailHTML += '</div>';
-					
-					thumbnailGallery.innerHTML = thumbnailHTML;
-
-					// Inizializza la prima thumbnail come attiva
-					const firstThumbnail = thumbnailGallery.querySelector('.thumbnail');
-					if (firstThumbnail) {
-						firstThumbnail.style.opacity = '1';
-						firstThumbnail.style.border = '2px solid #007bff';
-						firstThumbnail.classList.add('active');
-					}
-				}
-			}
-
-			function showNoImagesMessage() {
-				console.log('Nessuna immagine trovata');
-				if (mainImage) {
-					mainImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik0xNzUgMTI1SDIyNVYxNzVIMTc1VjEyNVoiIGZpbGw9IiNEOUQ5RDkiLz4KPHBhdGggZD0iTTE4NSAxMzVIMjE1VjE2NUgxODVWMTM1WiIgZmlsbD0iI0NDQ0NDQyIvPgo8dGV4dCB4PSIyMDAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2NjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbW1hZ2luZSBub24gZGlzcG9uaWJpbGU8L3RleHQ+Cjwvc3ZnPgo=';
-					mainImage.alt = 'Immagine non disponibile';
-				}
+			try {
+				// Usa il sistema dinamico per caricare tutte le immagini
+				const productLoader = new ProductLoader(category, 'temp');
+				const allImages = await productLoader.getAllProductImages(folderName);
 				
-				if (thumbnailGallery) {
-					thumbnailGallery.innerHTML = '<div class="text-center text-muted"><small>Nessuna immagine disponibile</small></div>';
+				if (allImages.length > 0) {
+					createImageGallery(allImages);
+				} else {
+					showNoImagesMessage();
 				}
+			} catch (error) {
+				console.error('Errore nel caricamento dinamico:', error);
+				showNoImagesMessage();
+			}
+		}
+
+		function createImageGallery(imagePaths) {
+			const mainImage = document.getElementById('mainImage');
+			const thumbnailGallery = document.getElementById('thumbnailGallery');
+			const productId = getUrlParameter('id');
+			
+			// Carica la prima immagine come principale
+			if (imagePaths.length > 0) {
+				mainImage.src = imagePaths[0];
+				mainImage.alt = `${productId} - Immagine principale`;
+				console.log(`Immagine principale caricata: ${imagePaths[0]}`);
 			}
 
-			// Inizia la ricerca dinamica delle immagini
-			tryLoadPattern(0);
+			// Crea le thumbnail
+			if (thumbnailGallery && imagePaths.length > 0) {
+				let thumbnailHTML = '<div class="row g-2">';
+				imagePaths.forEach((imagePath, index) => {
+					thumbnailHTML += `
+						<div class="col-3">
+							<img src="${imagePath}" class="img-fluid rounded thumbnail"
+								alt="${productId} - Vista ${index + 1}"
+								style="width: 100%; height: 80px; object-fit: contain; background: #f8f9fa; cursor: pointer; opacity: 0.7;"
+								onclick="changeMainImage(this.src)"
+								onmouseover="this.style.opacity='1'"
+								onmouseout="if(this !== document.querySelector('.thumbnail.active')) this.style.opacity='0.7'">
+						</div>
+					`;
+				});
+				thumbnailHTML += '</div>';
+				
+				thumbnailGallery.innerHTML = thumbnailHTML;
+
+				// Inizializza la prima thumbnail come attiva
+				const firstThumbnail = thumbnailGallery.querySelector('.thumbnail');
+				if (firstThumbnail) {
+					firstThumbnail.style.opacity = '1';
+					firstThumbnail.style.border = '2px solid #007bff';
+					firstThumbnail.classList.add('active');
+				}
+			}
+		}
+
+		function showNoImagesMessage() {
+			const mainImage = document.getElementById('mainImage');
+			const thumbnailGallery = document.getElementById('thumbnailGallery');
+			
+			console.log('Nessuna immagine trovata');
+			if (mainImage) {
+				mainImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik0xNzUgMTI1SDIyNVYxNzVIMTc1VjEyNVoiIGZpbGw9IiNEOUQ5RDkiLz4KPHBhdGggZD0iTTE4NSAxMzVIMjE1VjE2NUgxODVWMTM1WiIgZmlsbD0iI0NDQ0NDQyIvPgo8dGV4dCB4PSIyMDAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2NjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbW1hZ2luZSBub24gZGlzcG9uaWJpbGU8L3RleHQ+Cjwvc3ZnPgo=';
+				mainImage.alt = 'Immagine non disponibile';
+			}
+			
+			if (thumbnailGallery) {
+				thumbnailGallery.innerHTML = '<div class="text-center text-muted"><small>Nessuna immagine disponibile</small></div>';
+			}
 		}
 
 		// Funzione per cambiare l'immagine principale
