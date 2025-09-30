@@ -1,0 +1,72 @@
+[build]
+  publish = "."
+  command = "echo 'No build step required for static site'"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirect rules
+[[redirects]]
+  from = "/bomboniere"
+  to = "/bomboniere.html"
+  status = 200
+
+[[redirects]]
+  from = "/party"
+  to = "/party.html"
+  status = 200
+
+[[redirects]]
+  from = "/matrimonio"
+  to = "/matrimonio.html"
+  status = 200
+
+[[redirects]]
+  from = "/descrizioneArticolo-simple"
+  to = "/descrizioneArticolo-simple.html"
+  status = 200
+
+[[redirects]]
+  from = "/descrizioneArticolo-simple/*"
+  to = "/descrizioneArticolo-simple.html"
+  status = 200
+
+# Fallback redirect
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/immagini/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

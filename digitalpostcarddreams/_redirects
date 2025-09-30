@@ -1,0 +1,17 @@
+# Netlify redirects file
+# This file handles URL routing for the static site
+
+# Redirect root to index.html
+/ /index.html 200
+
+# Handle direct access to HTML files
+/bomboniere /bomboniere.html 200
+/party /party.html 200
+/matrimonio /matrimonio.html 200
+/descrizioneArticolo-simple /descrizioneArticolo-simple.html 200
+
+# Handle URLs with parameters (for product pages)
+/descrizioneArticolo-simple/* /descrizioneArticolo-simple.html 200
+
+# Fallback for any other routes to index.html
+/* /index.html 200
