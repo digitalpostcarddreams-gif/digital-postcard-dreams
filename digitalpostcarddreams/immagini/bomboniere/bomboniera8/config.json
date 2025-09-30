@@ -1,0 +1,12 @@
+﻿{
+    "title":  "Bomboniera Elegante 8",
+    "price":  "€8.50",
+    "description":  "\u003cp class=\"lead\"\u003eBomboniera raffinata e sofisticata per il tuo evento speciale.\u003c/p\u003e\u003cp\u003eDesign unico che rappresenta l\u0027essenza dell\u0027eleganza e della raffinatezza. Ideale per matrimoni, anniversari e occasioni speciali.\u003c/p\u003e",
+    "keywords":  "bomboniere, bomboniere personalizzate, design elegante, matrimonio, eventi speciali",
+    "images":  "bomboniere8.jpg",
+    "category":  "bomboniere",
+    "breadcrumb":  {
+                       "category":  "Bomboniere",
+                       "product":  "Bomboniera Elegante 8"
+                   }
+}

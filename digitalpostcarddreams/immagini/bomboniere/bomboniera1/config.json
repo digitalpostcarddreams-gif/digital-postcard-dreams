@@ -1,0 +1,11 @@
+﻿{
+    "title":  "Design Elegante",
+    "price":  "€8.00",
+    "description":  "\u003cp class=\"lead\"\u003eUna bomboniera raffinata e sofisticata, perfetta per eventi importanti e celebrazioni eleganti.\u003c/p\u003e\u003cp\u003eQuesta bomboniera rappresenta l\u0027essenza della raffinatezza e dell\u0027eleganza. Realizzata con materiali di alta qualità e attenzione ai dettagli, è ideale per matrimoni, anniversari e occasioni speciali che richiedono un tocco di classe.\u003c/p\u003e",
+    "keywords":  "bomboniere, bomboniere personalizzate, design elegante, matrimonio, eventi speciali",
+    "category":  "bomboniere",
+    "breadcrumb":  {
+                       "category":  "Bomboniere",
+                       "product":  "Design Elegante"
+                   }
+}

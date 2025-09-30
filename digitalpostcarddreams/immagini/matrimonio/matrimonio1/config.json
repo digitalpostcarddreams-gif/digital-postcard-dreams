@@ -1,0 +1,11 @@
+﻿{
+    "title":  "Design Elegante",
+    "price":  "€9.00",
+    "description":  "\u003cp class=\"lead\"\u003eUna personalizzazione matrimoniale dal design elegante e sofisticato, perfetta per il giorno più bello della vostra vita.\u003c/p\u003e\u003cp\u003eQuesta personalizzazione cattura l\u0027essenza dell\u0027eleganza e della raffinatezza, ideale per matrimoni classici e sofisticati. Ogni dettaglio è curato per creare un\u0027atmosfera di lusso e bellezza.\u003c/p\u003e",
+    "keywords":  "matrimonio, personalizzazioni matrimonio, design elegante, inviti matrimonio, bomboniere matrimonio",
+    "category":  "matrimonio",
+    "breadcrumb":  {
+                       "category":  "Matrimonio",
+                       "product":  "Design Elegante"
+                   }
+}

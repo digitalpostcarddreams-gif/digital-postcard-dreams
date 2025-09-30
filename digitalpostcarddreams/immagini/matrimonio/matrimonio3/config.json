@@ -1,0 +1,12 @@
+﻿{
+    "title":  "Personalizzazione Matrimonio 3",
+    "price":  "€9.50",
+    "description":  "\u003cp class=\"lead\"\u003ePersonalizzazione matrimoniale dal design elegante e sofisticato.\u003c/p\u003e\u003cp\u003ePerfetta per il giorno più bello della vostra vita. Design unico che cattura l\u0027essenza dell\u0027eleganza e della raffinatezza.\u003c/p\u003e",
+    "keywords":  "matrimonio, personalizzazioni matrimonio, design elegante, inviti matrimonio, bomboniere matrimonio",
+    "images":  "matrimonio3.jpg",
+    "category":  "matrimonio",
+    "breadcrumb":  {
+                       "category":  "Matrimonio",
+                       "product":  "Personalizzazione Matrimonio 3"
+                   }
+}
