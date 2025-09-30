@@ -231,47 +231,13 @@
         <p class="lead text-muted mb-5">Scopri alcuni esempi delle nostre personalizzazioni per matrimoni</p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-4 col-lg-4">
-          <div class="card h-100">
-            <a href="descrizioneArticolo-simple.html?id=matrimonio1&category=matrimonio">
-              <img src="categorie/matrimonio/matrimonio1.jpg" class="card-img-top img-hover" alt="Personalizzazione Matrimonio 1" style="height: 250px; object-fit: cover;">
-            </a>
-            <div class="card-body">
-              <a href="descrizioneArticolo-simple.html?id=matrimonio1&category=matrimonio" class="text-decoration-none">
-                <h5 class="card-title" style="font-family: 'Montserrat', sans-serif; color: #695841;">Design Elegante</h5>
-                <h6 class="text-primary">€9.00</h6>
-              </a>
-            </div>
+      <div class="row g-4" id="productsContainer">
+        <!-- I prodotti verranno caricati dinamicamente qui -->
+        <div class="col-12 text-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Caricamento prodotti...</span>
           </div>
-        </div>
-        
-        <div class="col-md-4 col-lg-4">
-          <div class="card h-100">
-            <a href="descrizioneArticolo-simple.html?id=matrimonio2&category=matrimonio">
-              <img src="categorie/matrimonio/matrimonio2.jpg" class="card-img-top img-hover" alt="Personalizzazione Matrimonio 2" style="height: 250px; object-fit: cover;">
-            </a>
-            <div class="card-body">
-              <a href="descrizioneArticolo-simple.html?id=matrimonio2&category=matrimonio" class="text-decoration-none">
-                <h5 class="card-title" style="font-family: 'Montserrat', sans-serif; color: #695841;">Tema Romantico</h5>
-                <h6 class="text-primary">€8.50</h6>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4 col-lg-4">
-          <div class="card h-100">
-            <a href="descrizioneArticolo-simple.html?id=matrimonio3&category=matrimonio">
-              <img src="categorie/matrimonio/matrimonio3.jpg" class="card-img-top img-hover" alt="Personalizzazione Matrimonio 3" style="height: 250px; object-fit: cover;">
-            </a>
-            <div class="card-body">
-              <a href="descrizioneArticolo-simple.html?id=matrimonio3&category=matrimonio" class="text-decoration-none">
-                <h5 class="card-title" style="font-family: 'Montserrat', sans-serif; color: #695841;">Stile Moderno</h5>
-                <h6 class="text-primary">€7.00</h6>
-              </a>
-            </div>
-          </div>
+          <p class="mt-2">Caricamento prodotti...</p>
         </div>
       </div>
     </div>
@@ -498,6 +464,16 @@
       <iconify-icon icon="logos:whatsapp-icon" class="whatsapp-icon"></iconify-icon>
     </a>
   </div>
+
+  <!-- Script per caricamento dinamico prodotti -->
+  <script src="js/product-loader.js"></script>
+  <script>
+    // Carica i prodotti quando la pagina è pronta
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM caricato, inizializzo caricamento prodotti Matrimonio...');
+      initProductLoader('matrimonio', 'productsContainer');
+    });
+  </script>
 
 </body>
 

@@ -120,51 +120,37 @@ class ProductLoader {
 
   // Trova tutte le immagini disponibili per un prodotto specifico
   async getAllProductImages(folderName) {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-    const commonNames = [
-      `${folderName}.jpg`, `${folderName}1.jpg`, `${folderName}2.jpg`, `${folderName}3.jpg`,
-      `${folderName}4.jpg`, `${folderName}5.jpg`,
-      'image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg',
-      'foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto4.jpg', 'foto5.jpg',
-      'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg',
-      'photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg', 'photo5.jpg'
+    console.log(`🔍 Ricerca ULTRA-VELOCE immagini per: ${folderName}`);
+    
+    const foundImages = [];
+
+    // Solo i pattern più essenziali - ULTRA VELOCE
+    const essentialPatterns = [
+      'foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto4.jpg', 'foto5.jpg'
     ];
 
-    const foundImages = [];
-    
-    // Prova tutti i nomi comuni
-    for (const name of commonNames) {
-      const imagePath = `categorie/${this.category}/${folderName}/immaginiProdotto/${name}`;
+    console.log(`📋 Testando solo ${essentialPatterns.length} pattern essenziali`);
+
+    // Testa solo i pattern essenziali
+    for (const fileName of essentialPatterns) {
+      const imagePath = `categorie/${this.category}/${folderName}/immaginiProdotto/${fileName}`;
       if (await this.imageExists(imagePath)) {
         foundImages.push(imagePath);
+        console.log(`✅ Trovata: ${imagePath}`);
       }
     }
 
-    // Se non trova nulla, prova con pattern generici
-    if (foundImages.length === 0) {
-      for (let i = 1; i <= 10; i++) {
-        for (const ext of imageExtensions) {
-          const imagePath = `categorie/${this.category}/${folderName}/immaginiProdotto/${folderName}${i}${ext}`;
-          if (await this.imageExists(imagePath)) {
-            foundImages.push(imagePath);
-          }
-        }
-      }
-    }
-
-    console.log(`Trovate ${foundImages.length} immagini per ${folderName}:`, foundImages);
+    console.log(`🎯 TROVATE ${foundImages.length} immagini per ${folderName}:`, foundImages);
     return foundImages;
   }
 
   // Trova la prima immagine disponibile
   async findFirstImage(productId, folderName) {
-    const commonNames = [
-      `${productId}.jpg`, `${productId}1.jpg`, `${productId}2.jpg`, `${productId}3.jpg`,
-      'image1.jpg', 'foto1.jpg', 'img1.jpg', 'photo1.jpg'
-    ];
+    // Usa il nuovo schema foto1.jpg, foto2.jpg, etc.
+    const imageNames = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'];
 
-    // Prova prima i nomi comuni
-    for (const name of commonNames) {
+    // Prova i nomi del nuovo schema
+    for (const name of imageNames) {
       const imagePath = `categorie/${this.category}/${folderName}/immaginiProdotto/${name}`;
       if (await this.imageExists(imagePath)) {
         return imagePath;
