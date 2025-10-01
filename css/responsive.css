@@ -352,12 +352,12 @@ body {
 	
 	/* Padding per le card della sezione "Mi presento" solo su mobile */
 	.service-card {
-		padding: 45px !important;
+		padding: 25px !important;
 		width: 100% !important;
-		height: 280px !important;
+		height: -webkit-fill-available;
 		display: flex !important;
 		flex-direction: column !important;
-		justify-content: center !important;
+		justify-content: left;
 		align-items: center !important;
 		text-align: center !important;
 	}
@@ -408,6 +408,33 @@ body {
 	.my-3 {
 		margin-top: 0.5rem !important;
 		margin-bottom: 0.5rem !important;
+	}
+}
+
+/* ========================================
+   DESKTOP STYLES - Sezione "Mi presento"
+   ======================================== */
+
+@media (min-width: 769px) {
+	/* Ripristina layout desktop originale SOLO per le card della sezione "Mi presento" */
+	.service-card {
+		padding: 2rem !important;
+		height: auto !important;
+		display: block !important;
+		text-align: center !important;
+		width: auto !important;
+	}
+	
+	/* Aggiungi spazio laterale su desktop per la sezione "Mi presento" */
+	.container {
+		padding-left: 3rem !important;
+		padding-right: 3rem !important;
+	}
+	
+	/* Font per tutta la navbar solo desktop */
+	.navbar-nav .nav-link {
+		font-family: 'avenir_next_condensedregular', sans-serif !important;
+		text-transform: uppercase !important;
 	}
 	
 	/* Riduci dimensioni icone e testo delle card */
