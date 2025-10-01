@@ -437,6 +437,14 @@ body {
 		text-transform: uppercase !important;
 	}
 	
+	/* Service cards equal height on desktop */
+	.service-card {
+		height: 280px !important;
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: space-between !important;
+	}
+	
 	/* Riduci dimensioni icone e testo delle card */
 	.service-icon {
 		font-size: 2rem !important;
