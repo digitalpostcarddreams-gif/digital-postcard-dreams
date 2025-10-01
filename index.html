@@ -477,8 +477,9 @@
 								href="#terms-conditions" class="text-decoration-underline"
 								style="color: #bf9e75;" data-bs-toggle="modal"
 								data-bs-target="#termsModal">Termini e condizioni</a> / <a
-								href="#shipping-returns" class="text-decoration-underline"
-								style="color: #bf9e75;">Spedizione e resi</a> / <a
+							href="#shipping-returns" class="text-decoration-underline"
+							style="color: #bf9e75;" data-bs-toggle="modal"
+							data-bs-target="#shippingModal">Spedizione e resi</a> / <a
 								href="#privacy-policy" class="text-decoration-underline"
 								style="color: #bf9e75;" data-bs-toggle="modal"
 								data-bs-target="#privacyModal">Privacy Policy</a> / <a
@@ -722,6 +723,41 @@
 							Protezione dei Dati Personali.</p>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">Chiudi</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Spedizione e Resi Modal -->
+		<div class="modal fade" id="shippingModal" tabindex="-1"
+			aria-labelledby="shippingModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content"
+					style="background: #fbf3f0; border: none; border-radius: 15px;">
+					<div class="modal-header"
+						style="border-bottom: 1px solid #bf9e75; border-radius: 15px 15px 0 0;">
+						<h5 class="modal-title" id="shippingModalLabel"
+							style="color: #695841; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+							Spedizione e Resi</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body" style="color: #695841; font-family: 'avenir_next_condensedregular', sans-serif;">
+						<div class="mb-4">
+							<h6 style="color: #bf9e75; font-weight: 600; margin-bottom: 1rem;">📦 Spedizione</h6>
+							<p class="mb-3">Le tue personalizzazioni vengono spedite tramite Poste Italiane entro 2-3 giorni lavorativi dalla conferma dell'ordine.</p>
+							<p class="mb-0">I tempi di consegna variano da 1 a 3 giorni lavorativi a seconda della destinazione.</p>
+						</div>
+						<div>
+							<h6 style="color: #bf9e75; font-weight: 600; margin-bottom: 1rem;">↩️ Resi</h6>
+							<p class="mb-3">Hai 14 giorni dalla data di consegna per restituire prodotti non personalizzati.</p>
+							<p class="mb-0">I prodotti personalizzati non possono essere resi per motivi igienici.</p>
+						</div>
+					</div>
+					<div class="modal-footer"
+						style="border-top: 1px solid #bf9e75; border-radius: 0 0 15px 15px;">
 						<button type="button" class="btn btn-secondary"
 							data-bs-dismiss="modal">Chiudi</button>
 					</div>
