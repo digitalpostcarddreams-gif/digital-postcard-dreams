@@ -435,6 +435,26 @@ body {
 	.navbar-nav .nav-link {
 		font-family: 'avenir_next_condensedregular', sans-serif !important;
 		text-transform: uppercase !important;
+		position: relative !important;
+		transition: all 0.3s ease !important;
+	}
+	
+	/* Evidenziazione pagina attiva */
+	.navbar-nav .nav-link.active {
+		color: #bf9e75 !important;
+		font-weight: 600 !important;
+	}
+	
+	.navbar-nav .nav-link.active::after {
+		content: '' !important;
+		position: absolute !important;
+		bottom: -5px !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		width: 30px !important;
+		height: 2px !important;
+		background-color: #bf9e75 !important;
+		border-radius: 1px !important;
 	}
 	
 	/* Service cards equal height on desktop */
