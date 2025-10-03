@@ -46,7 +46,7 @@
 				<div class="col-lg-6 d-flex justify-content-center align-items-center">
 					<nav class="main-menu d-flex navbar navbar-expand-lg">
 						<ul class="navbar-nav menu-list list-unstyled d-flex gap-4 mb-0">
-							<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
 							<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
 							<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
 							<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
@@ -107,7 +107,7 @@
 						</div>
 						<div class="offcanvas-body">
 							<ul class="navbar-nav menu-list list-unstyled">
-								<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+								<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
 								<li class="nav-item"><a href="party.html" class="nav-link">Party Kit</a></li>
 								<li class="nav-item"><a href="matrimonio.html" class="nav-link">Matrimonio</a></li>
 								<li class="nav-item"><a href="bomboniere.html" class="nav-link">Bomboniere</a></li>
@@ -825,21 +825,5 @@
 			}
 		</script>
 
-	<!-- Script per evidenziare la pagina attiva -->
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Rimuovi la classe active da tutti i link
-			document.querySelectorAll('.nav-link').forEach(link => {
-				link.classList.remove('active');
-			});
-			
-			// Aggiungi la classe active al link della pagina corrente
-			const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-			const activeLink = document.querySelector(`a[href="${currentPage}"]`);
-			if (activeLink) {
-				activeLink.classList.add('active');
-			}
-		});
-	</script>
 </body>
 </html>
