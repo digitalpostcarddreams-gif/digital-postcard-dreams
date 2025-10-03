@@ -22,6 +22,12 @@
 	}
 
   var initSwiper = function() {
+    // Verifica che Swiper sia disponibile
+    if (typeof Swiper === 'undefined') {
+      console.log('Swiper non è ancora caricato, riprovo tra 100ms...');
+      setTimeout(initSwiper, 100);
+      return;
+    }
 
     var swiper = new Swiper(".main-swiper", {
       speed: 500,
@@ -121,21 +127,23 @@
     initChocolat();
 
         // product single page
-        var thumb_slider = new Swiper(".product-thumbnail-slider", {
-          spaceBetween: 8,
-          slidesPerView: 3,
-          freeMode: true,
-          watchSlidesProgress: true,
-        });
-    
-        var large_slider = new Swiper(".product-large-slider", {
-          spaceBetween: 10,
-          slidesPerView: 1,
-          effect: 'fade',
-          thumbs: {
-            swiper: thumb_slider,
-          },
-        });
+        if (typeof Swiper !== 'undefined') {
+          var thumb_slider = new Swiper(".product-thumbnail-slider", {
+            spaceBetween: 8,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+          });
+      
+          var large_slider = new Swiper(".product-large-slider", {
+            spaceBetween: 10,
+            slidesPerView: 1,
+            effect: 'fade',
+            thumbs: {
+              swiper: thumb_slider,
+            },
+          });
+        }
 
     window.addEventListener("load", (event) => {
       //isotope
