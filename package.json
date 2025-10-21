@@ -1,0 +1,15 @@
+{
+  "name": "digital-postcard-dreams",
+  "version": "1.0.0",
+  "description": "Il sito ora utilizza un sistema modulare dove tutti i prodotti sono gestiti da una singola pagina template.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
